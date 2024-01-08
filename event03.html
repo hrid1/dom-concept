@@ -6,26 +6,52 @@
     <title>Review writer</title>
 
     <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://kit.fontawesome.com/922dab29cc.js" crossorigin="anonymous"></script>
 </head>
-<body class="text-white bg-gray-500">
+<body class="text-white bg-gray-900 ">
 
-    <section id="top-reviews" class="text-right p-4 ">
-        <h1>Top Reviews</h1>
-    </section>
+    
+      <div class="relative"> 
+         <h1 class="absolute right-48 top-5 font-bold">Top Reviews</h1>
+      </div>
+    
 
-    <section class="flex items-center justify-center  p-10 w-full gap-10">
+    <section class="flex items-center justify-center  p-5 gap-10">
         <div class="" id="product-img">
-            <img class="" src="images/ted.jpg" alt="">
+            <img class="rounded" src="images/ted.jpg" alt="">
         </div>
 
-        <div id="input-field" class="text-right text-gray-900">
+        <div id="input-field" class="text-right text-gray-900 h-80">
+
+            <div  class="mb-5 text-white text-left h-3/4" id="reviews-id">
+                <i class="fa-regular fa-user"></i><p>hello there</p>
+                <p>hi there</p>
+                <p> <i class="fa-regular fa-user mr-1"></i> bye there</p>
+                
+                  
+            </div>
             
-            <textarea class="block p-3 rounded " name="" id="" cols="60" rows="8" placeholder="Enter Your Review"></textarea>
-            <button class="text-right fw-bold bg-gray-200 mt-3 px-3 py-2 rounded hover:bg-blue-700 hover:text-white">Submit</button>
+           <div>
+            <textarea class="block p-3 rounded " name="" id="input" cols="60" rows="8" placeholder="Enter Your Review"></textarea>
+            <button id="submit-btn" class="text-right font-bold bg-gray-200 mt-3 px-3 py-2 rounded hover:bg-blue-800 hover:text-white">Submit</button>
+           </div>
         </div>
     </section>
 
 
+    <script>
+        document.getElementById('submit-btn').addEventListener('click', function(){
+            console.log("button clicked")
+            let text = document.getElementById('input');
+           // console.log(text);
+
+            const tags = document.getElementById('reviews-id');
+            const tag = document.createElement('p'); 
+            tag.innerText = text.value; 
+            tags.appendChild(tag);
+            text.value = ''; 
+        })
+    </script>
     
 </body>
 </html>

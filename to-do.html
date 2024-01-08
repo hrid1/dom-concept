@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <title>to do app</title>
+
+</head>
+<body>
+
+    <section>
+        <h1 class="text-center text-3xl font-medium my-3">To Do List</h1>
+
+        <div class="mb-6 text-center">
+            <input type="text" id="user-input" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500  w-1/2 p-2 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">
+            <button onclick="getInput()" class="bg-blue-400 rounded font-medium py-1.5 px-3">Add Items</button>
+        </div>
+
+        <!-- table  -->
+        
+        <di>
+        
+<div class="flex flex-col w-2/3 mx-auto">  
+        <div class="overflow-hidden">
+          <table class="min-w-full text-left text-sm ">
+            <thead class="border-b font-medium dark:border-neutral-500">
+              <tr>
+                <th scope="col" class="px-6 py-4">Number</th>
+                <th scope="col" class="px-6 py-4">Description</th>
+                <th scope="col" class="px-6 py-4 ">Handle</th>
+              </tr>
+            </thead>
+            <tbody id="tbody">
+              <tr>
+               
+                <td class="px-6 py-4">0</td>
+                <td class="px-6 py-4">Otto</td>
+                
+                <td class="table-button">
+                    <button id="del-val" class="bg-red-400 px-2 py-1 rounded">Delete</button>
+                    <button class="bg-green-400 px-2 py-1 rounded">Done</button>
+                </td>
+              </tr>
+         
+            </tbody>
+          </table>
+        </div>
+      
+    
+  </div>
+    </section>
+
+    <script>
+        console.log("Hello");
+
+        // here the button add funciton
+        function addBtn(btnName){
+            const btn = document.createElement('button');
+            btn.innerText = btnName;
+            btn.className = "px-2 py-1 rounded";
+            btn.classList.add("py-1");
+            return btn;
+
+        }
+
+        let value = 0;
+        function getInput(){
+            text = document.getElementById('user-input');
+            userInput = text.value;
+            text.value = "";
+            
+            // create a table row
+            const newRow = document.createElement("tr");
+        
+            // new number
+            value += 1;
+            let num = document.createElement("td");
+            num.innerText = value;
+            num.className = "px-6 py-4";
+
+            //new description
+            const newTask = document.createElement("td");
+            newTask.innerText = userInput;
+            newTask.className = "px-6 py-4";
+
+            // new Button
+            var button1 = addBtn("Delete")
+            var button2 = addBtn("Done");
+            button1.classList.add("bg-red-400");
+            button2.classList.add("bg-green-400", "ml-1");
+                      
+            //  insert value in table row
+            newRow.appendChild(num);
+            newRow.appendChild(newTask);
+            newRow.append(button1, button2);
+
+            // table body
+            const table = document.getElementById("tbody");
+            table.appendChild(newRow);
+
+
+            // --------------------------delete task--------------------------
+
+            const del = document.getElementById('del-val');
+            console.log(del);
+            cos
+        }
+    </script>
+    
+</body>
+</html>
