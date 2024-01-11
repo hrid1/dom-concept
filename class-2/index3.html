@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body style="margin-left: 100px;">
+    <h1>To Do List: </h1>
+    <input type="text" name="" id="input-id">
+    <button id="add-btn" >Submit</button>
+
+    <ul id="tasks-list">
+        <li>Write code</li>
+
+    </ul>
+
+    <script>
+        // ---------------------Add item--------------------
+
+        document.getElementById("add-btn").addEventListener('click', function(){
+            const inputField = document.getElementById("input-id");
+            const inputValue = inputField.value;
+            inputField.value = "";
+
+            // -----------create the a element to store the inputValue
+            const node = document.createElement("li");
+            node.innerText = inputValue;
+            node.classList.add("new-li")
+            //------------ find parent node and put the new element
+            document.getElementById("tasks-list").appendChild(node);
+            
+            // ------------get every child by looping
+            const allTask = document.getElementsByClassName("new-li")
+            for (const item of allTask) {
+                item.addEventListener("click", function(e){
+                  
+                   // e.target.remove();
+                    e.target.parentNode.removeChild(e.target);
+                })
+            }
+
+
+     /* 
+            //Another Way:  
+            document.getElementById("tasks-list").addEventListener("click", function(event){
+            event.target.remove();
+              
+        })
+    */
+
+        })
+       
+
+    </script>
+
+</body>
+</html>

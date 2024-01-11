@@ -38,7 +38,7 @@
                 <td class="px-6 py-4">Otto</td>
                 
                 <td class="table-button">
-                    <button id="del-val" class="bg-red-400 px-2 py-1 rounded">Delete</button>
+                    <button class="delbtn bg-red-400 px-2 py-1 rounded">Delete</button>
                     <button class="bg-green-400 px-2 py-1 rounded">Done</button>
                 </td>
               </tr>
@@ -52,6 +52,11 @@
     </section>
 
     <script>
+
+
+
+       
+
         console.log("Hello");
 
         // here the button add funciton
@@ -87,9 +92,11 @@
             // new Button
             var button1 = addBtn("Delete")
             var button2 = addBtn("Done");
-            button1.classList.add("bg-red-400");
+            button1.classList.add("bg-red-400", "delbtn");
             button2.classList.add("bg-green-400", "ml-1");
-                      
+           
+
+
             //  insert value in table row
             newRow.appendChild(num);
             newRow.appendChild(newTask);
@@ -100,12 +107,28 @@
             table.appendChild(newRow);
 
 
-            // --------------------------delete task--------------------------
+        }    // --------------------------delete task--------------------------
 
-            const del = document.getElementById('del-val');
-            console.log(del);
-            cos
-        }
+       
+
+
+
+
+
+
+
+
+
+
+          // const elements = document.querySelectorAll(".delbtn");
+          // console.log(elements);
+
+          // for (const value of elements) {
+          //   value.addEventListener("click", function(event) {
+          //     console.log(value);
+          //   })
+          // }
+
     </script>
     
 </body>

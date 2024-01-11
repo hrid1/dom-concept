@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <h1>All Task Name </h1>
+
+    <input type="text" name="" id="input-task">
+    <button id="btn-add">Add</button>
+    <ul id="tasks-list">
+        <li>Drinking Water</li>
+    </ul>
+
+
+    <script>
+      document.getElementById("btn-add").addEventListener('click', function(){
+
+        const newTask = document.getElementById("input-task");
+        const newTaskValue = newTask.value;
+        newTask.value = "";
+
+        const child = document.createElement("li");
+        child.innerText = newTaskValue;
+
+       document.getElementById("tasks-list").appendChild(child);
+      })
+     
+      document.getElementById("tasks-list").addEventListener("click", function(event){
+    //   const targetNode = event.target.remove();
+        event.target.remove()
+    
+      })
+      
+
+    </script>
+
+    
+</body>
+</html>
